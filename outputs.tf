@@ -56,7 +56,7 @@ output "consul_version" {
 
 output "consul_datacenter" {
   value = var.consul_enabled ? (
-    hcp_consul_cluster.example[0].consul_datacenter
+    hcp_consul_cluster.example[0].datacenter
   ) : null
 }
 
