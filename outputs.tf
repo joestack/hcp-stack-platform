@@ -61,7 +61,7 @@ output "consul_datacenter" {
 }
 
 output "hvn" {
-  value = hcp_hvn.example[0].hvn_id ? (
+  value = anytrue([var.hvn_enabled, var.vault_enabled, var.consul_enabled]) ? (
     hcp_hvn.example[0].hvn_id
   ) : null
 }
