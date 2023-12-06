@@ -54,6 +54,13 @@ output "consul_version" {
   ) : null
 }
 
+output "consul_datacenter" {
+  value = var.consul_enabled ? (
+    hcp_consul_cluster.example[0].consul_datacenter
+  ) : null
+}
+
+
 # output "created_at" {
 #   value = hcp_boundary_cluster.example.created_at
 # }
