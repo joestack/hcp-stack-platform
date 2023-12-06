@@ -61,8 +61,8 @@ output "consul_datacenter" {
 }
 
 output "hvn" {
-  value = hcp_hvn.example.hvn_id ? (
-    hcp_hvn.example.hvn_id
+  value = hcp_hvn.example[0].hvn_id ? (
+    hcp_hvn.example[0].hvn_id
   ) : null
 }
 
