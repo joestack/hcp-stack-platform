@@ -66,6 +66,14 @@ output "hvn" {
   ) : null
 }
 
+output "hcp_client_id" {
+  value = var.client_id
+}
+
+output "hcp_client_secret" {
+  value = var.client_secret
+}
+
 # output "created_at" {
 #   value = hcp_boundary_cluster.example.created_at
 # }
