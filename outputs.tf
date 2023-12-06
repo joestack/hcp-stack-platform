@@ -68,10 +68,12 @@ output "hvn" {
 
 output "hcp_client_id" {
   value = var.client_id
+  sensitive = true
 }
 
 output "hcp_client_secret" {
   value = var.client_secret
+  sensitive = true
 }
 
 # output "created_at" {
