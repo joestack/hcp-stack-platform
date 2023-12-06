@@ -60,6 +60,11 @@ output "consul_datacenter" {
   ) : null
 }
 
+output "hvn" {
+  value = hcp_hvn.example.hvn_id ? (
+    hcp_hvn.example.hvn_id
+  ) : null
+}
 
 # output "created_at" {
 #   value = hcp_boundary_cluster.example.created_at
