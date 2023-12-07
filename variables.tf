@@ -28,7 +28,7 @@ variable "hvn_provider" {
 
 variable "hvn_cidr_block" {
   description = "CIDR Block to be used"
-  default = "172.25.16.0/20"
+  default = "172.25.32.0/20"
 }
 
 variable "boundary_enabled" {

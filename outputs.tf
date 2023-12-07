@@ -1,21 +1,31 @@
 output "boundary_cluster_url" {
-  value = hcp_boundary_cluster.example[0].cluster_url
+  value = var.boundary_enabled ? (
+    hcp_boundary_cluster.example[0].cluster_url
+  ) : null
 }
 
 output "vault_cluster_public_url" {
-  value = hcp_vault_cluster.example[0].vault_public_endpoint_url
+  value = var.vault_enabled ? (
+    hcp_vault_cluster.example[0].vault_public_endpoint_url
+  ) : null
 }
 
 output "vault_cluster_private_url" {
-  value = hcp_vault_cluster.example[0].vault_private_endpoint_url
+  value = var.vault_enabled ? (
+    hcp_vault_cluster.example[0].vault_private_endpoint_url
+  ) : null 
 }
 
 output "vault_namespace" {
-  value = hcp_vault_cluster.example[0].namespace
+  value = var.vault_enabled ? (
+  hcp_vault_cluster.example[0].namespace
+  ) : null
 }
 
 output "vault_admin_token" {
-  value = hcp_vault_cluster_admin_token.example[0].token
+  value = var.vault_enabled ? (
+  hcp_vault_cluster_admin_token.example[0].token
+  ) : null
   sensitive = true
 }
 
