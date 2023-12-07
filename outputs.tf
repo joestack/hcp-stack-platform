@@ -70,6 +70,13 @@ output "consul_datacenter" {
   ) : null
 }
 
+output "hcp_consul_cluster_id" {
+  value       = var.consul_enabled ? (
+    hcp_consul_cluster.example[0].cluster_id
+  ) : null
+  description = "HCP Consul ID"
+}
+
 output "hvn" {
   value = anytrue([var.hvn_enabled, var.vault_enabled, var.consul_enabled]) ? (
     {
