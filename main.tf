@@ -13,7 +13,7 @@ resource "hcp_boundary_cluster" "hcp_demo" {
 
 resource "hcp_hvn" "hcp_demo" {
   count          = anytrue([var.hvn_enabled, var.vault_enabled, var.consul_enabled]) ? 1 : 0
-  hvn_id         = "${var.name}-hvn"
+  hvn_id         = "${var.name}-demo-hvn"
   cloud_provider = var.hvn_provider
   region         = var.region
   cidr_block     = var.hvn_cidr_block
